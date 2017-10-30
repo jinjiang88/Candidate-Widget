@@ -66,5 +66,12 @@ $().ready(function() {
 			}, 3000);
 		}
 	});
+	//function below replaces user_input div with reappear div once validation is complete without rendering a new form
+	$("form").submit(function(event){
+		if ($("#signupForm").valid()) {
+			$("#user_input").replaceWith($("#reappear").html());
+		}
+    return false;
+});
 
 })

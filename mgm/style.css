@@ -45,7 +45,7 @@ textarea{
 #requiredfield{
 	float: right;
 }
-.user_input{
+#user_input{
 	padding: 20px;
 }
 .icon {
@@ -81,6 +81,10 @@ li {
 	background: url(images/name_icon.png) no-repeat scroll 3px 3px;
 	text-align: right;
 }
-.finishingtouches{
+#finishingtouches{
 	padding: 20px;
+	
+}
+#reappear{
+	display: none;
 }
