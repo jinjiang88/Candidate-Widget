@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
+	<script src="js/form.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		//function to display hidden div "california" if Califonia is selected as an option
+		function show_select()
+		{
+			var state = document.getElementById("state");
+			var california = document.getElementById("california");
+
+			var desired_box = state.options[state.selectedIndex].value;
+			if(desired_box == "CA") {
+				california.style.display = '';
+			}
+			else if(desired_box != "CA") {
+				california.style.display = 'none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="widget">
+			<div class="icon">
+				<img src="images/mga_logo.png">
+				<div class="lightblue"></div>
+				<div class="darkblue"></div>
+
+			</div>
+			<div id="user_input">
+			<h2>Please fill out the following fields to contact MGA Entertainment</h2>
+			<form id="signupForm" method="post" >
+				<div class="form-group">
+					<li>
+					<label>Full Name:*</label>
+					<br>
+					<li>
+					<input class="mytext" type="text" name="name" id="name" placeholder="John Doe">
+				</div>
+				<div class="form-group">
+					<li>
+					<label>Mobile Phone Number:*</label>
+					<br>
+					<input class="mytext" type="text" name="phone" id="phone" placeholder="ex: 123-123-1234">
+					</li>
+				</div>
+				<div class="form-group">
+					<li>
+					<label>State:*</label>
+					<br>
+					<select class="mytext" name="state" id="state" onchange='show_select()'>
+						<option value="">Select one</option>
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+						<option value="CA">California</option>
+						<option value="CO">Colorado</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="DC">District Of Columbia</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="HI">Hawaii</option>
+						<option value="ID">Idaho</option>
+						<option value="IL">Illinois</option>
+						<option value="IN">Indiana</option>
+						<option value="IA">Iowa</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NV">Nevada</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NM">New Mexico</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="ND">North Dakota</option>
+						<option value="OH">Ohio</option>
+						<option value="OK">Oklahoma</option>
+						<option value="OR">Oregon</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="SD">South Dakota</option>
+						<option value="TN">Tennessee</option>
+						<option value="TX">Texas</option>
+						<option value="UT">Utah</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WA">Washington</option>
+						<option value="WV">West Virginia</option>
+						<option value="WI">Wisconsin</option>
+						<option value="WY">Wyoming</option>
+					</select>
+					</li>
+				</div>
+				<div class="form-group" id="california" style='display:none'>
+					<li>
+					<label>Was your item purchased in CA?:*</label>
+					<br>
+					<select class="mytext" name="purchased" id="purchased">
+						<option value="">Select one</option>
+						<option value="yes">Yes</option>
+						<option value="no">No</option>
+					</select>
+					</li>
+				</div>
+				<div class="form-group">
+					<li>
+					<label>Describe your question:*</label>
+					<br>
+					<textarea rows="6" cols="25" class="mytext" type="text" name="question" id="question"></textarea>
+					</li>
+					<br>
+					<input type="submit" id="button" value="Submit">
+					<br>
+					<br>
+					<p id="requiredfield"><span id="makethisred">*</span> Required field</p>
+					<br>
+					<br>
+
+				</div>
+			</form>
+			</div>
+<!-- 			created a hidden div to appear to replace user_input div once validation is complete -->
+			<div id="reappear">
+				<div id="finishingtouches">
+					<br>
+					<br>
+					<h2>Thank you!</h2> 
+					<h2>We have received your message and will reach out to you as soon as humanly possible</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
